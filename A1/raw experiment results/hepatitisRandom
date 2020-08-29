@@ -1,0 +1,190 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     hepatitis
+Instances:    155
+Attributes:   20
+              AGE
+              SEX
+              STEROID
+              ANTIVIRALS
+              FATIGUE
+              MALAISE
+              ANOREXIA
+              LIVER_BIG
+              LIVER_FIRM
+              SPLEEN_PALPABLE
+              SPIDERS
+              ASCITES
+              VARICES
+              BILIRUBIN
+              ALK_PHOSPHATE
+              SGOT
+              ALBUMIN
+              PROTIME
+              HISTOLOGY
+              Class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+ALBUMIN < 3.85
+|   BILIRUBIN < 3.7
+|   |   ALBUMIN < 2.65
+|   |   |   ASCITES = no : LIVE (0.61/0.2)
+|   |   |   ASCITES = yes
+|   |   |   |   STEROID = no : DIE (1.03/0.03)
+|   |   |   |   STEROID = yes : DIE (4/0)
+|   |   ALBUMIN >= 2.65
+|   |   |   PROTIME < 44
+|   |   |   |   SEX = male : LIVE (2.78/0)
+|   |   |   |   SEX = female
+|   |   |   |   |   SGOT < 66.5
+|   |   |   |   |   |   HISTOLOGY = no
+|   |   |   |   |   |   |   FATIGUE = no : LIVE (1.69/0)
+|   |   |   |   |   |   |   FATIGUE = yes
+|   |   |   |   |   |   |   |   SGOT < 59.5
+|   |   |   |   |   |   |   |   |   ANOREXIA = no : LIVE (0.46/0)
+|   |   |   |   |   |   |   |   |   ANOREXIA = yes : LIVE (1.69/0.05)
+|   |   |   |   |   |   |   |   SGOT >= 59.5 : LIVE (0.64/0.18)
+|   |   |   |   |   |   HISTOLOGY = yes
+|   |   |   |   |   |   |   LIVER_BIG = no : LIVE (1.52/0.02)
+|   |   |   |   |   |   |   LIVER_BIG = yes
+|   |   |   |   |   |   |   |   FATIGUE = no : LIVE (0.33/0)
+|   |   |   |   |   |   |   |   FATIGUE = yes : DIE (2.3/0)
+|   |   |   |   |   SGOT >= 66.5
+|   |   |   |   |   |   PROTIME < 26 : LIVE (1.5/0.11)
+|   |   |   |   |   |   PROTIME >= 26
+|   |   |   |   |   |   |   SPLEEN_PALPABLE = no
+|   |   |   |   |   |   |   |   BILIRUBIN < 0.55 : DIE (1.04/0.03)
+|   |   |   |   |   |   |   |   BILIRUBIN >= 0.55
+|   |   |   |   |   |   |   |   |   ASCITES = no
+|   |   |   |   |   |   |   |   |   |   BILIRUBIN < 1.65 : LIVE (1.7/0.02)
+|   |   |   |   |   |   |   |   |   |   BILIRUBIN >= 1.65
+|   |   |   |   |   |   |   |   |   |   |   ANTIVIRALS = no : DIE (1.31/0.6)
+|   |   |   |   |   |   |   |   |   |   |   ANTIVIRALS = yes : DIE (1/0)
+|   |   |   |   |   |   |   |   |   ASCITES = yes : DIE (1.16/0.01)
+|   |   |   |   |   |   |   SPLEEN_PALPABLE = yes
+|   |   |   |   |   |   |   |   STEROID = no
+|   |   |   |   |   |   |   |   |   AGE < 41.5 : LIVE (0.02/0)
+|   |   |   |   |   |   |   |   |   AGE >= 41.5 : DIE (2.38/0)
+|   |   |   |   |   |   |   |   STEROID = yes : DIE (0.39/0)
+|   |   |   PROTIME >= 44
+|   |   |   |   SGOT < 18 : DIE (0.56/0.01)
+|   |   |   |   SGOT >= 18
+|   |   |   |   |   SPLEEN_PALPABLE = no
+|   |   |   |   |   |   ALK_PHOSPHATE < 161.5
+|   |   |   |   |   |   |   MALAISE = no : LIVE (9.99/0)
+|   |   |   |   |   |   |   MALAISE = yes
+|   |   |   |   |   |   |   |   ALK_PHOSPHATE < 120.5
+|   |   |   |   |   |   |   |   |   BILIRUBIN < 1.1
+|   |   |   |   |   |   |   |   |   |   SGOT < 59.5
+|   |   |   |   |   |   |   |   |   |   |   AGE < 55 : LIVE (2.76/0)
+|   |   |   |   |   |   |   |   |   |   |   AGE >= 55 : DIE (0.05/-0)
+|   |   |   |   |   |   |   |   |   |   SGOT >= 59.5 : DIE (0.14/0)
+|   |   |   |   |   |   |   |   |   BILIRUBIN >= 1.1
+|   |   |   |   |   |   |   |   |   |   AGE < 57.5 : LIVE (3.25/0)
+|   |   |   |   |   |   |   |   |   |   AGE >= 57.5 : DIE (0.06/0)
+|   |   |   |   |   |   |   |   ALK_PHOSPHATE >= 120.5 : LIVE (0.8/0.23)
+|   |   |   |   |   |   ALK_PHOSPHATE >= 161.5
+|   |   |   |   |   |   |   BILIRUBIN < 0.55 : DIE (1.03/0.02)
+|   |   |   |   |   |   |   BILIRUBIN >= 0.55
+|   |   |   |   |   |   |   |   BILIRUBIN < 2.45
+|   |   |   |   |   |   |   |   |   BILIRUBIN < 1.25 : LIVE (0.14/0.05)
+|   |   |   |   |   |   |   |   |   BILIRUBIN >= 1.25
+|   |   |   |   |   |   |   |   |   |   HISTOLOGY = no : LIVE (1.54/0)
+|   |   |   |   |   |   |   |   |   |   HISTOLOGY = yes : LIVE (1.74/0.02)
+|   |   |   |   |   |   |   |   BILIRUBIN >= 2.45 : DIE (0.56/0.01)
+|   |   |   |   |   SPLEEN_PALPABLE = yes
+|   |   |   |   |   |   BILIRUBIN < 1.75
+|   |   |   |   |   |   |   ANOREXIA = no : LIVE (3.19/0)
+|   |   |   |   |   |   |   ANOREXIA = yes : DIE (0.14/0)
+|   |   |   |   |   |   BILIRUBIN >= 1.75 : DIE (0.6/0.03)
+|   BILIRUBIN >= 3.7
+|   |   FATIGUE = no : LIVE (0.11/0)
+|   |   FATIGUE = yes
+|   |   |   LIVER_FIRM = no
+|   |   |   |   HISTOLOGY = no : DIE (1.09/0.04)
+|   |   |   |   HISTOLOGY = yes : DIE (4.75/0)
+|   |   |   LIVER_FIRM = yes
+|   |   |   |   LIVER_BIG = no : LIVE (0.06/0.01)
+|   |   |   |   LIVER_BIG = yes
+|   |   |   |   |   HISTOLOGY = no : LIVE (0.01/0)
+|   |   |   |   |   HISTOLOGY = yes : DIE (2.3/0)
+ALBUMIN >= 3.85
+|   SPIDERS = no
+|   |   MALAISE = no : LIVE (56.72/0)
+|   |   MALAISE = yes
+|   |   |   PROTIME < 43.5 : DIE (0.92/0.29)
+|   |   |   PROTIME >= 43.5
+|   |   |   |   STEROID = no
+|   |   |   |   |   ANTIVIRALS = no
+|   |   |   |   |   |   BILIRUBIN < 1.3
+|   |   |   |   |   |   |   AGE < 53.5 : LIVE (3.18/0)
+|   |   |   |   |   |   |   AGE >= 53.5 : DIE (0.56/0)
+|   |   |   |   |   |   BILIRUBIN >= 1.3 : LIVE (1.59/0)
+|   |   |   |   |   ANTIVIRALS = yes : LIVE (3/0)
+|   |   |   |   STEROID = yes : LIVE (5.6/0)
+|   SPIDERS = yes
+|   |   ALBUMIN < 4.25
+|   |   |   ALBUMIN < 4.15
+|   |   |   |   BILIRUBIN < 2.55
+|   |   |   |   |   FATIGUE = no : LIVE (1.01/0)
+|   |   |   |   |   FATIGUE = yes
+|   |   |   |   |   |   HISTOLOGY = no
+|   |   |   |   |   |   |   LIVER_BIG = no : LIVE (2.04/0)
+|   |   |   |   |   |   |   LIVER_BIG = yes : LIVE (1.3/0.28)
+|   |   |   |   |   |   HISTOLOGY = yes
+|   |   |   |   |   |   |   AGE < 60.5 : LIVE (4.28/0)
+|   |   |   |   |   |   |   AGE >= 60.5 : LIVE (1.28/0.28)
+|   |   |   |   BILIRUBIN >= 2.55
+|   |   |   |   |   ALK_PHOSPHATE < 171 : DIE (1.49/0.05)
+|   |   |   |   |   ALK_PHOSPHATE >= 171 : LIVE (1.1/0.06)
+|   |   |   ALBUMIN >= 4.15
+|   |   |   |   MALAISE = no
+|   |   |   |   |   LIVER_BIG = no : LIVE (0.1/0)
+|   |   |   |   |   LIVER_BIG = yes
+|   |   |   |   |   |   HISTOLOGY = no : DIE (1.11/0.01)
+|   |   |   |   |   |   HISTOLOGY = yes : DIE (1/0)
+|   |   |   |   MALAISE = yes : LIVE (1.2/0.19)
+|   |   ALBUMIN >= 4.25
+|   |   |   BILIRUBIN < 2.05
+|   |   |   |   HISTOLOGY = no : LIVE (1.39/0.13)
+|   |   |   |   HISTOLOGY = yes
+|   |   |   |   |   MALAISE = no : LIVE (3.13/0)
+|   |   |   |   |   MALAISE = yes : DIE (0.13/0)
+|   |   |   BILIRUBIN >= 2.05 : LIVE (0.41/0.17)
+
+Size of the tree : 127
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         119               76.7742 %
+Incorrectly Classified Instances        36               23.2258 %
+Kappa statistic                          0.1985
+Mean absolute error                      0.2249
+Root mean squared error                  0.4504
+Relative absolute error                 68.1031 %
+Root relative squared error            111.2197 %
+Total Number of Instances              155     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.281    0.106    0.409      0.281    0.333      0.204    0.702     0.392     DIE
+                 0.894    0.719    0.827      0.894    0.859      0.204    0.702     0.873     LIVE
+Weighted Avg.    0.768    0.592    0.741      0.768    0.751      0.204    0.702     0.774     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+   9  23 |   a = DIE
+  13 110 |   b = LIVE
+

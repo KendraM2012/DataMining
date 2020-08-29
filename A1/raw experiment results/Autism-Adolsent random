@@ -1,0 +1,67 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     adolescent
+Instances:    104
+Attributes:   21
+              A1_Score
+              A2_Score
+              A3_Score
+              A4_Score
+              A5_Score
+              A6_Score
+              A7_Score
+              A8_Score
+              A9_Score
+              A10_Score
+              age
+              gender
+              ethnicity
+              jundice
+              austim
+              contry_of_res
+              used_app_before
+              result
+              age_desc
+              relation
+              Class/ASD
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+result < 6.5 : NO (41/0)
+result >= 6.5 : YES (63/0)
+
+Size of the tree : 3
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          84               80.7692 %
+Incorrectly Classified Instances        20               19.2308 %
+Kappa statistic                          0.5939
+Mean absolute error                      0.1916
+Root mean squared error                  0.4014
+Relative absolute error                 40.0547 %
+Root relative squared error             82.1033 %
+Total Number of Instances              104     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.732    0.143    0.769      0.732    0.750      0.594    0.852     0.715     NO
+                 0.857    0.268    0.831      0.857    0.844      0.594    0.852     0.875     YES
+Weighted Avg.    0.808    0.219    0.807      0.808    0.807      0.594    0.852     0.812     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 30 11 |  a = NO
+  9 54 |  b = YES
+

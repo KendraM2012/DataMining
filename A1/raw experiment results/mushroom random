@@ -1,0 +1,235 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     mushroom
+Instances:    8124
+Attributes:   23
+              cap-shape
+              cap-surface
+              cap-color
+              bruises?
+              odor
+              gill-attachment
+              gill-spacing
+              gill-size
+              gill-color
+              stalk-shape
+              stalk-root
+              stalk-surface-above-ring
+              stalk-surface-below-ring
+              stalk-color-above-ring
+              stalk-color-below-ring
+              veil-type
+              veil-color
+              ring-number
+              ring-type
+              spore-print-color
+              population
+              habitat
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+stalk-color-below-ring = b : p (432/0)
+stalk-color-below-ring = c : p (36/0)
+stalk-color-below-ring = e : e (96/0)
+stalk-color-below-ring = g : e (576/0)
+stalk-color-below-ring = n
+|   stalk-surface-above-ring = f : e (24/0)
+|   stalk-surface-above-ring = k : p (448/0)
+|   stalk-surface-above-ring = s : e (24/0)
+|   stalk-surface-above-ring = y : e (16/0)
+stalk-color-below-ring = o : e (192/0)
+stalk-color-below-ring = p
+|   ring-type = c : e (0/0)
+|   ring-type = e : p (864/0)
+|   ring-type = f : e (0/0)
+|   ring-type = l : p (432/0)
+|   ring-type = n : e (0/0)
+|   ring-type = p : e (576/0)
+|   ring-type = s : e (0/0)
+|   ring-type = z : e (0/0)
+stalk-color-below-ring = w
+|   population = a : e (384/0)
+|   population = c
+|   |   cap-color = b : e (24/0)
+|   |   cap-color = c : e (0/0)
+|   |   cap-color = e : e (24/0)
+|   |   cap-color = g : e (0/0)
+|   |   cap-color = n : e (24/0)
+|   |   cap-color = p : e (24/0)
+|   |   cap-color = r : e (0/0)
+|   |   cap-color = u : e (0/0)
+|   |   cap-color = w : p (8/0)
+|   |   cap-color = y : e (0/0)
+|   population = n : e (400/0)
+|   population = s
+|   |   gill-size = b
+|   |   |   habitat = d : e (0/0)
+|   |   |   habitat = g
+|   |   |   |   stalk-root = b
+|   |   |   |   |   bruises? = f : e (16.41/0)
+|   |   |   |   |   bruises? = t : p (72/0)
+|   |   |   |   stalk-root = c : e (157.16/0)
+|   |   |   |   stalk-root = e : e (471.49/0)
+|   |   |   |   stalk-root = r : e (58.94/0)
+|   |   |   |   stalk-root = u : e (0/0)
+|   |   |   |   stalk-root = z : e (0/0)
+|   |   |   habitat = l : e (0/0)
+|   |   |   habitat = m : e (128/0)
+|   |   |   habitat = p : e (48/0)
+|   |   |   habitat = u : p (72/0)
+|   |   |   habitat = w : e (0/0)
+|   |   gill-size = n : p (224/0)
+|   population = v
+|   |   gill-color = b : p (864/0)
+|   |   gill-color = e : e (0/0)
+|   |   gill-color = g
+|   |   |   cap-surface = f
+|   |   |   |   odor = a : e (0/0)
+|   |   |   |   odor = c : p (12/0)
+|   |   |   |   odor = f : e (0/0)
+|   |   |   |   odor = l : e (0/0)
+|   |   |   |   odor = m : e (0/0)
+|   |   |   |   odor = n : e (12/0)
+|   |   |   |   odor = p : e (0/0)
+|   |   |   |   odor = s : e (0/0)
+|   |   |   |   odor = y : e (0/0)
+|   |   |   cap-surface = g : e (0/0)
+|   |   |   cap-surface = s : p (24/0)
+|   |   |   cap-surface = y : p (12/0)
+|   |   gill-color = h
+|   |   |   bruises? = f : e (6/0)
+|   |   |   bruises? = t : p (48/0)
+|   |   gill-color = k
+|   |   |   bruises? = f : e (12/0)
+|   |   |   bruises? = t : p (32/0)
+|   |   gill-color = n
+|   |   |   gill-size = b : e (72/0)
+|   |   |   gill-size = n
+|   |   |   |   odor = a : e (16/0)
+|   |   |   |   odor = c : p (24/0)
+|   |   |   |   odor = f : e (0/0)
+|   |   |   |   odor = l : e (16/0)
+|   |   |   |   odor = m : e (0/0)
+|   |   |   |   odor = n : e (12/0)
+|   |   |   |   odor = p : p (32/0)
+|   |   |   |   odor = s : e (0/0)
+|   |   |   |   odor = y : e (0/0)
+|   |   gill-color = o : e (0/0)
+|   |   gill-color = p
+|   |   |   cap-surface = f
+|   |   |   |   bruises? = f
+|   |   |   |   |   habitat = d : p (12/0)
+|   |   |   |   |   habitat = g : e (0/0)
+|   |   |   |   |   habitat = l : e (0/0)
+|   |   |   |   |   habitat = m : e (0/0)
+|   |   |   |   |   habitat = p : e (0/0)
+|   |   |   |   |   habitat = u : e (12/0)
+|   |   |   |   |   habitat = w : e (0/0)
+|   |   |   |   bruises? = t : e (52/0)
+|   |   |   cap-surface = g : e (0/0)
+|   |   |   cap-surface = s
+|   |   |   |   cap-color = b : p (16/0)
+|   |   |   |   cap-color = c : e (0/0)
+|   |   |   |   cap-color = e : e (0/0)
+|   |   |   |   cap-color = g : p (20/0)
+|   |   |   |   cap-color = n : p (8/0)
+|   |   |   |   cap-color = p : p (4/0)
+|   |   |   |   cap-color = r : e (0/0)
+|   |   |   |   cap-color = u : e (0/0)
+|   |   |   |   cap-color = w
+|   |   |   |   |   gill-size = b : p (16/0)
+|   |   |   |   |   gill-size = n
+|   |   |   |   |   |   spore-print-color = b : e (0/0)
+|   |   |   |   |   |   spore-print-color = h : e (0/0)
+|   |   |   |   |   |   spore-print-color = k : p (6/0)
+|   |   |   |   |   |   spore-print-color = n
+|   |   |   |   |   |   |   odor = a : e (2/0)
+|   |   |   |   |   |   |   odor = c : p (2/0)
+|   |   |   |   |   |   |   odor = f : e (0/0)
+|   |   |   |   |   |   |   odor = l : e (2/0)
+|   |   |   |   |   |   |   odor = m : e (0/0)
+|   |   |   |   |   |   |   odor = n : e (0/0)
+|   |   |   |   |   |   |   odor = p : p (4/0)
+|   |   |   |   |   |   |   odor = s : e (0/0)
+|   |   |   |   |   |   |   odor = y : e (0/0)
+|   |   |   |   |   |   spore-print-color = o : e (0/0)
+|   |   |   |   |   |   spore-print-color = r : e (0/0)
+|   |   |   |   |   |   spore-print-color = u : e (4/0)
+|   |   |   |   |   |   spore-print-color = w : e (0/0)
+|   |   |   |   |   |   spore-print-color = y : e (0/0)
+|   |   |   |   cap-color = y : e (8/0)
+|   |   |   cap-surface = y
+|   |   |   |   habitat = d : e (42/0)
+|   |   |   |   habitat = g : p (8/0)
+|   |   |   |   habitat = l : e (0/0)
+|   |   |   |   habitat = m : e (0/0)
+|   |   |   |   habitat = p : e (0/0)
+|   |   |   |   habitat = u : p (8/0)
+|   |   |   |   habitat = w : e (0/0)
+|   |   gill-color = r : p (24/0)
+|   |   gill-color = u
+|   |   |   stalk-shape = e
+|   |   |   |   cap-shape = b : e (0/0)
+|   |   |   |   cap-shape = c : e (0/0)
+|   |   |   |   cap-shape = f : e (3/0)
+|   |   |   |   cap-shape = k : e (0/0)
+|   |   |   |   cap-shape = s : e (0/0)
+|   |   |   |   cap-shape = x
+|   |   |   |   |   odor = a : e (0/0)
+|   |   |   |   |   odor = c : p (24/0)
+|   |   |   |   |   odor = f : e (0/0)
+|   |   |   |   |   odor = l : e (0/0)
+|   |   |   |   |   odor = m : e (0/0)
+|   |   |   |   |   odor = n : e (3/0)
+|   |   |   |   |   odor = p : e (0/0)
+|   |   |   |   |   odor = s : e (0/0)
+|   |   |   |   |   odor = y : e (0/0)
+|   |   |   stalk-shape = t : e (72/0)
+|   |   gill-color = w
+|   |   |   habitat = d : e (110/0)
+|   |   |   habitat = g : p (52/0)
+|   |   |   habitat = l : e (0/0)
+|   |   |   habitat = m : p (12/0)
+|   |   |   habitat = p : e (16/0)
+|   |   |   habitat = u : p (40/0)
+|   |   |   habitat = w : e (0/0)
+|   |   gill-color = y : e (0/0)
+|   population = y : e (472/0)
+stalk-color-below-ring = y : p (24/0)
+
+Size of the tree : 169
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        8124              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0     
+Root mean squared error                  0     
+Relative absolute error                  0      %
+Root relative squared error              0      %
+Total Number of Instances             8124     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     e
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     p
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 4208    0 |    a = e
+    0 3916 |    b = p
+

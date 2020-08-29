@@ -1,0 +1,96 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -U -M 2
+Relation:     hepatitis
+Instances:    155
+Attributes:   20
+              AGE
+              SEX
+              STEROID
+              ANTIVIRALS
+              FATIGUE
+              MALAISE
+              ANOREXIA
+              LIVER_BIG
+              LIVER_FIRM
+              SPLEEN_PALPABLE
+              SPIDERS
+              ASCITES
+              VARICES
+              BILIRUBIN
+              ALK_PHOSPHATE
+              SGOT
+              ALBUMIN
+              PROTIME
+              HISTOLOGY
+              Class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 unpruned tree
+------------------
+
+ASCITES = no
+|   SPIDERS = no
+|   |   MALAISE = no: LIVE (72.09/1.0)
+|   |   MALAISE = yes
+|   |   |   PROTIME <= 43: DIE (4.3/1.33)
+|   |   |   PROTIME > 43: LIVE (19.71/1.64)
+|   SPIDERS = yes
+|   |   SEX = male: LIVE (6.25)
+|   |   SEX = female
+|   |   |   LIVER_FIRM = no
+|   |   |   |   AGE <= 40: LIVE (4.15/1.0)
+|   |   |   |   AGE > 40: DIE (5.45/0.07)
+|   |   |   LIVER_FIRM = yes
+|   |   |   |   FATIGUE = no: LIVE (4.21)
+|   |   |   |   FATIGUE = yes
+|   |   |   |   |   ANTIVIRALS = no
+|   |   |   |   |   |   SGOT <= 101: LIVE (7.38/0.32)
+|   |   |   |   |   |   SGOT > 101
+|   |   |   |   |   |   |   LIVER_BIG = no: DIE (3.3/0.09)
+|   |   |   |   |   |   |   LIVER_BIG = yes
+|   |   |   |   |   |   |   |   ALBUMIN <= 3.7: DIE (2.22/0.02)
+|   |   |   |   |   |   |   |   ALBUMIN > 3.7: LIVE (3.28/0.14)
+|   |   |   |   |   ANTIVIRALS = yes: LIVE (2.0)
+ASCITES = yes
+|   ALBUMIN <= 2.8: DIE (9.19/0.06)
+|   ALBUMIN > 2.8
+|   |   LIVER_FIRM = no
+|   |   |   ALBUMIN <= 2.9: LIVE (2.15)
+|   |   |   ALBUMIN > 2.9: DIE (6.81/2.03)
+|   |   LIVER_FIRM = yes: LIVE (2.51/0.22)
+
+Number of Leaves  : 	16
+
+Size of the tree : 	31
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         125               80.6452 %
+Incorrectly Classified Instances        30               19.3548 %
+Kappa statistic                          0.4093
+Mean absolute error                      0.2029
+Root mean squared error                  0.3993
+Relative absolute error                 61.4628 %
+Root relative squared error             98.6191 %
+Total Number of Instances              155     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.531    0.122    0.531      0.531    0.531      0.409    0.742     0.516     DIE
+                 0.878    0.469    0.878      0.878    0.878      0.409    0.742     0.870     LIVE
+Weighted Avg.    0.806    0.397    0.806      0.806    0.806      0.409    0.742     0.796     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  17  15 |   a = DIE
+  15 108 |   b = LIVE
+

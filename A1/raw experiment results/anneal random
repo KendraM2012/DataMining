@@ -1,0 +1,208 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     anneal
+Instances:    898
+Attributes:   39
+              family
+              product-type
+              steel
+              carbon
+              hardness
+              temper_rolling
+              condition
+              formability
+              strength
+              non-ageing
+              surface-finish
+              surface-quality
+              enamelability
+              bc
+              bf
+              bt
+              bw/me
+              bl
+              m
+              chrom
+              phos
+              cbond
+              marvi
+              exptl
+              ferro
+              corr
+              blue/bright/varn/clean
+              lustre
+              jurofm
+              s
+              p
+              shape
+              thick
+              width
+              len
+              oil
+              bore
+              packing
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+steel = ?
+|   formability = ?
+|   |   lustre = ?
+|   |   |   hardness < 22.5 : 2 (8/0)
+|   |   |   hardness >= 22.5 : 3 (8/0)
+|   |   lustre = Y : 3 (8/0)
+|   formability = 1
+|   |   lustre = ?
+|   |   |   cbond = ?
+|   |   |   |   ferro = ?
+|   |   |   |   |   family = ? : 3 (23/0)
+|   |   |   |   |   family = GB : 1 (0/0)
+|   |   |   |   |   family = GK : 1 (0/0)
+|   |   |   |   |   family = GS : 1 (0/0)
+|   |   |   |   |   family = TN : 5 (9/0)
+|   |   |   |   |   family = ZA : 1 (0/0)
+|   |   |   |   |   family = ZF : 1 (0/0)
+|   |   |   |   |   family = ZH : 1 (0/0)
+|   |   |   |   |   family = ZM : 1 (0/0)
+|   |   |   |   |   family = ZS : 1 (0/0)
+|   |   |   |   ferro = Y : 5 (10/0)
+|   |   |   cbond = Y : 3 (5/0)
+|   |   lustre = Y : 3 (1/0)
+|   formability = 2 : 3 (14/0)
+|   formability = 3 : 1 (0/0)
+|   formability = 4 : 1 (0/0)
+|   formability = 5 : 1 (0/0)
+steel = R
+|   condition = ?
+|   |   exptl = ? : 3 (16/0)
+|   |   exptl = Y : 1 (2/0)
+|   condition = S
+|   |   surface-quality = ? : 2 (70/0)
+|   |   surface-quality = D : 1 (0/0)
+|   |   surface-quality = E : 3 (159/0)
+|   |   surface-quality = F : 1 (0/0)
+|   |   surface-quality = G : 1 (0/0)
+|   condition = A : 3 (9/0)
+|   condition = X : 1 (0/0)
+steel = A
+|   family = ?
+|   |   surface-quality = ? : 1 (1/0)
+|   |   surface-quality = D : 3 (55/0)
+|   |   surface-quality = E
+|   |   |   width < 603.45
+|   |   |   |   condition = ? : U (1/0)
+|   |   |   |   condition = S : 3 (13/0)
+|   |   |   |   condition = A : 1 (0/0)
+|   |   |   |   condition = X : 1 (0/0)
+|   |   |   width >= 603.45
+|   |   |   |   carbon < 5 : 3 (84/0)
+|   |   |   |   carbon >= 5 : U (1/0)
+|   |   surface-quality = F : 3 (60/0)
+|   |   surface-quality = G
+|   |   |   temper_rolling = ? : 3 (49/0)
+|   |   |   temper_rolling = T
+|   |   |   |   thick < 3
+|   |   |   |   |   hardness < 75 : 3 (46/0)
+|   |   |   |   |   hardness >= 75
+|   |   |   |   |   |   cbond = ? : U (13/0)
+|   |   |   |   |   |   cbond = Y
+|   |   |   |   |   |   |   thick < 0.75 : 3 (2/0)
+|   |   |   |   |   |   |   thick >= 0.75 : U (1/0)
+|   |   |   |   thick >= 3
+|   |   |   |   |   oil = ?
+|   |   |   |   |   |   bore = 0
+|   |   |   |   |   |   |   len < 2440
+|   |   |   |   |   |   |   |   hardness < 72.5 : 3 (3/0)
+|   |   |   |   |   |   |   |   hardness >= 72.5 : U (3/0)
+|   |   |   |   |   |   |   len >= 2440 : U (1/0)
+|   |   |   |   |   |   bore = 500 : U (2/0)
+|   |   |   |   |   |   bore = 600 : U (4/0)
+|   |   |   |   |   |   bore = 760 : 1 (0/0)
+|   |   |   |   |   oil = Y : U (3/0)
+|   |   |   |   |   oil = N : 1 (0/0)
+|   family = GB : 1 (0/0)
+|   family = GK : 1 (0/0)
+|   family = GS : 1 (0/0)
+|   family = TN : 5 (48/0)
+|   family = ZA : 1 (0/0)
+|   family = ZF : 1 (0/0)
+|   family = ZH : 1 (0/0)
+|   family = ZM : 1 (0/0)
+|   family = ZS
+|   |   hardness < 77.5 : 3 (39/0)
+|   |   hardness >= 77.5 : U (11/0)
+steel = U : 1 (0/0)
+steel = K : 3 (51/0)
+steel = M
+|   width < 609.95 : 3 (4/0)
+|   width >= 609.95
+|   |   surface-quality = ? : 2 (1/0)
+|   |   surface-quality = D : 1 (0/0)
+|   |   surface-quality = E : 1 (0/0)
+|   |   surface-quality = F : 1 (0/0)
+|   |   surface-quality = G
+|   |   |   bt = ? : 2 (4/0)
+|   |   |   bt = Y
+|   |   |   |   shape = COIL
+|   |   |   |   |   strength < 475 : 3 (5/0)
+|   |   |   |   |   strength >= 475 : 2 (2/0)
+|   |   |   |   shape = SHEET : 2 (4/0)
+steel = S
+|   width < 609.95
+|   |   width < 342.45 : 1 (3/0)
+|   |   width >= 342.45
+|   |   |   carbon < 35 : 1 (2/0)
+|   |   |   carbon >= 35 : 3 (1/0)
+|   width >= 609.95 : 3 (4/0)
+steel = W : 3 (19/0)
+steel = V
+|   enamelability = ? : 1 (0/0)
+|   enamelability = 1 : 3 (6/0)
+|   enamelability = 2 : 2 (10/0)
+|   enamelability = 3 : 1 (0/0)
+|   enamelability = 4 : 1 (0/0)
+|   enamelability = 5 : 1 (0/0)
+
+Size of the tree : 118
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         883               98.3296 %
+Incorrectly Classified Instances        15                1.6704 %
+Kappa statistic                          0.9582
+Mean absolute error                      0.0058
+Root mean squared error                  0.0749
+Relative absolute error                  4.3362 %
+Root relative squared error             28.9931 %
+Total Number of Instances              898     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.875    0.001    0.875      0.875    0.875      0.874    0.937     0.767     1
+                 0.970    0.004    0.970      0.970    0.970      0.966    0.983     0.944     2
+                 0.990    0.037    0.988      0.990    0.989      0.954    0.978     0.987     3
+                 ?        0.000    ?          ?        ?          ?        ?         ?         4
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     5
+                 0.900    0.003    0.923      0.900    0.911      0.907    0.948     0.835     U
+Weighted Avg.    0.983    0.029    0.983      0.983    0.983      0.956    0.979     0.975     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+   7   0   1   0   0   0 |   a = 1
+   0  96   3   0   0   0 |   b = 2
+   1   3 677   0   0   3 |   c = 3
+   0   0   0   0   0   0 |   d = 4
+   0   0   0   0  67   0 |   e = 5
+   0   0   4   0   0  36 |   f = U
+

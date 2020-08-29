@@ -1,0 +1,522 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     audiology
+Instances:    226
+Attributes:   70
+              age_gt_60
+              air
+              airBoneGap
+              ar_c
+              ar_u
+              bone
+              boneAbnormal
+              bser
+              history_buzzing
+              history_dizziness
+              history_fluctuating
+              history_fullness
+              history_heredity
+              history_nausea
+              history_noise
+              history_recruitment
+              history_ringing
+              history_roaring
+              history_vomiting
+              late_wave_poor
+              m_at_2k
+              m_cond_lt_1k
+              m_gt_1k
+              m_m_gt_2k
+              m_m_sn
+              m_m_sn_gt_1k
+              m_m_sn_gt_2k
+              m_m_sn_gt_500
+              m_p_sn_gt_2k
+              m_s_gt_500
+              m_s_sn
+              m_s_sn_gt_1k
+              m_s_sn_gt_2k
+              m_s_sn_gt_3k
+              m_s_sn_gt_4k
+              m_sn_2_3k
+              m_sn_gt_1k
+              m_sn_gt_2k
+              m_sn_gt_3k
+              m_sn_gt_4k
+              m_sn_gt_500
+              m_sn_gt_6k
+              m_sn_lt_1k
+              m_sn_lt_2k
+              m_sn_lt_3k
+              middle_wave_poor
+              mod_gt_4k
+              mod_mixed
+              mod_s_mixed
+              mod_s_sn_gt_500
+              mod_sn
+              mod_sn_gt_1k
+              mod_sn_gt_2k
+              mod_sn_gt_3k
+              mod_sn_gt_4k
+              mod_sn_gt_500
+              notch_4k
+              notch_at_4k
+              o_ar_c
+              o_ar_u
+              s_sn_gt_1k
+              s_sn_gt_2k
+              s_sn_gt_4k
+              speech
+              static_normal
+              tymp
+              viith_nerve_signs
+              wave_V_delayed
+              waveform_ItoV_prolonged
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+ar_c = absent
+|   ar_u = absent
+|   |   air = mild
+|   |   |   speech = good : cochlear_age_and_noise (0.73/0.09)
+|   |   |   speech = normal
+|   |   |   |   late_wave_poor = f
+|   |   |   |   |   boneAbnormal = f
+|   |   |   |   |   |   o_ar_u = absent
+|   |   |   |   |   |   |   age_gt_60 = f
+|   |   |   |   |   |   |   |   bone = mild : mixed_cochlear_unk_fixation (2/0)
+|   |   |   |   |   |   |   |   bone = moderate : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   |   bone = normal : conductive_fixation (2.12/0)
+|   |   |   |   |   |   |   |   bone = unmeasured : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   age_gt_60 = t : mixed_cochlear_age_otitis_media (0.26/0)
+|   |   |   |   |   |   o_ar_u = elevated : otitis_media (1/0)
+|   |   |   |   |   |   o_ar_u = normal
+|   |   |   |   |   |   |   history_ringing = f : bells_palsy (1/0)
+|   |   |   |   |   |   |   history_ringing = t : mixed_cochlear_unk_fixation (1/0)
+|   |   |   |   |   boneAbnormal = t : cochlear_unknown (1.26/0.26)
+|   |   |   |   late_wave_poor = t : mixed_poss_central_om (1/0)
+|   |   |   speech = poor : acoustic_neuroma (0/0)
+|   |   |   speech = unmeasured : acoustic_neuroma (0/0)
+|   |   |   speech = very_good
+|   |   |   |   history_noise = f : possible_menieres (1.66/0.66)
+|   |   |   |   history_noise = t
+|   |   |   |   |   tymp = a : cochlear_age_and_noise (3/0)
+|   |   |   |   |   tymp = ad : mixed_cochlear_unk_discontinuity (1/0)
+|   |   |   |   |   tymp = as : acoustic_neuroma (0/0)
+|   |   |   |   |   tymp = b : acoustic_neuroma (0/0)
+|   |   |   |   |   tymp = c : acoustic_neuroma (0/0)
+|   |   |   speech = very_poor : acoustic_neuroma (1.13/0.13)
+|   |   air = moderate
+|   |   |   history_noise = f
+|   |   |   |   wave_V_delayed = f
+|   |   |   |   |   tymp = a : acoustic_neuroma (0/0)
+|   |   |   |   |   tymp = ad : conductive_discontinuity (1/0)
+|   |   |   |   |   tymp = as : mixed_cochlear_unk_fixation (4/0)
+|   |   |   |   |   tymp = b : mixed_cochlear_unk_ser_om (2/0)
+|   |   |   |   |   tymp = c : acoustic_neuroma (0/0)
+|   |   |   |   wave_V_delayed = t : retrocochlear_unknown (1/0)
+|   |   |   history_noise = t
+|   |   |   |   airBoneGap = f : mixed_cochlear_unk_fixation (2/0)
+|   |   |   |   airBoneGap = t : otitis_media (1/0)
+|   |   air = normal
+|   |   |   age_gt_60 = f : poss_central (1/0)
+|   |   |   age_gt_60 = t
+|   |   |   |   history_noise = f
+|   |   |   |   |   mod_sn_gt_3k = f : mixed_cochlear_age_s_om (1/0)
+|   |   |   |   |   mod_sn_gt_3k = t : mixed_cochlear_age_otitis_media (1/0)
+|   |   |   |   history_noise = t : cochlear_age (1/0)
+|   |   air = profound : cochlear_unknown (0.17/0)
+|   |   air = severe
+|   |   |   bone = mild
+|   |   |   |   airBoneGap = f : cochlear_unknown (0.07/0)
+|   |   |   |   airBoneGap = t
+|   |   |   |   |   boneAbnormal = f : conductive_discontinuity (1/0)
+|   |   |   |   |   boneAbnormal = t : mixed_cochlear_unk_ser_om (1/0)
+|   |   |   bone = moderate : acoustic_neuroma (0/0)
+|   |   |   bone = normal
+|   |   |   |   tymp = a : cochlear_unknown (0.1/0)
+|   |   |   |   tymp = ad : acoustic_neuroma (0/0)
+|   |   |   |   tymp = as : conductive_fixation (3/0)
+|   |   |   |   tymp = b : acoustic_neuroma (0/0)
+|   |   |   |   tymp = c : acoustic_neuroma (0/0)
+|   |   |   bone = unmeasured : acoustic_neuroma (0/0)
+|   ar_u = elevated
+|   |   speech = good : cochlear_age (1.17/0.17)
+|   |   speech = normal
+|   |   |   m_sn_lt_1k = f
+|   |   |   |   tymp = a
+|   |   |   |   |   air = mild : acoustic_neuroma (0/0)
+|   |   |   |   |   air = moderate : acoustic_neuroma (0/0)
+|   |   |   |   |   air = normal : normal_ear (3/0)
+|   |   |   |   |   air = profound : cochlear_unknown (0.03/0)
+|   |   |   |   |   air = severe : cochlear_unknown (0.03/0)
+|   |   |   |   tymp = ad : mixed_cochlear_unk_discontinuity (1/0)
+|   |   |   |   tymp = as : acoustic_neuroma (0/0)
+|   |   |   |   tymp = b : acoustic_neuroma (0/0)
+|   |   |   |   tymp = c : otitis_media (1/0)
+|   |   |   m_sn_lt_1k = t : possible_menieres (1/0)
+|   |   speech = poor : cochlear_age_and_noise (1.01/0.01)
+|   |   speech = unmeasured : acoustic_neuroma (0/0)
+|   |   speech = very_good : otitis_media (1.01/0.01)
+|   |   speech = very_poor : acoustic_neuroma (0/0)
+|   ar_u = normal
+|   |   o_ar_c = absent
+|   |   |   mod_gt_4k = f
+|   |   |   |   notch_4k = f
+|   |   |   |   |   air = mild : cochlear_unknown (1/0)
+|   |   |   |   |   air = moderate : acoustic_neuroma (0/0)
+|   |   |   |   |   air = normal : normal_ear (4/0)
+|   |   |   |   |   air = profound : cochlear_unknown (0.03/0)
+|   |   |   |   |   air = severe : cochlear_unknown (0.03/0)
+|   |   |   |   notch_4k = t : cochlear_age_and_noise (0.19/0)
+|   |   |   mod_gt_4k = t : cochlear_unknown (1/0)
+|   |   o_ar_c = elevated
+|   |   |   speech = good : cochlear_unknown (1.01/0)
+|   |   |   speech = normal : acoustic_neuroma (0/0)
+|   |   |   speech = poor : acoustic_neuroma (0/0)
+|   |   |   speech = unmeasured : acoustic_neuroma (0/0)
+|   |   |   speech = very_good : normal_ear (1.01/0.01)
+|   |   |   speech = very_poor : acoustic_neuroma (0/0)
+|   |   o_ar_c = normal
+|   |   |   m_m_gt_2k = f
+|   |   |   |   m_m_sn_gt_2k = f : normal_ear (1.03/0.03)
+|   |   |   |   m_m_sn_gt_2k = t : cochlear_age (1/0)
+|   |   |   m_m_gt_2k = t : cochlear_age (1/0)
+ar_c = elevated
+|   air = mild
+|   |   airBoneGap = f
+|   |   |   history_noise = f
+|   |   |   |   history_dizziness = f
+|   |   |   |   |   m_sn_gt_3k = f
+|   |   |   |   |   |   m_sn_gt_2k = f
+|   |   |   |   |   |   |   bone = mild
+|   |   |   |   |   |   |   |   o_ar_c = absent : cochlear_unknown (1/0)
+|   |   |   |   |   |   |   |   o_ar_c = elevated : cochlear_unknown (2/0)
+|   |   |   |   |   |   |   |   o_ar_c = normal
+|   |   |   |   |   |   |   |   |   boneAbnormal = f : cochlear_unknown (1/0)
+|   |   |   |   |   |   |   |   |   boneAbnormal = t : cochlear_age (1/0)
+|   |   |   |   |   |   |   bone = moderate : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   bone = normal : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   bone = unmeasured : cochlear_unknown (2/0)
+|   |   |   |   |   |   m_sn_gt_2k = t : cochlear_unknown (1/0)
+|   |   |   |   |   m_sn_gt_3k = t : cochlear_unknown (1/0)
+|   |   |   |   history_dizziness = t
+|   |   |   |   |   history_ringing = f : possible_menieres (1/0)
+|   |   |   |   |   history_ringing = t : retrocochlear_unknown (1/0)
+|   |   |   history_noise = t
+|   |   |   |   bone = mild
+|   |   |   |   |   speech = good : acoustic_neuroma (0/0)
+|   |   |   |   |   speech = normal : acoustic_neuroma (0/0)
+|   |   |   |   |   speech = poor : mixed_poss_noise_om (1/0)
+|   |   |   |   |   speech = unmeasured : acoustic_neuroma (0/0)
+|   |   |   |   |   speech = very_good : mixed_poss_noise_om (1/0)
+|   |   |   |   |   speech = very_poor : cochlear_age_and_noise (0.67/0)
+|   |   |   |   bone = moderate : acoustic_neuroma (0/0)
+|   |   |   |   bone = normal : acoustic_neuroma (0/0)
+|   |   |   |   bone = unmeasured : cochlear_age_and_noise (1.33/0)
+|   |   airBoneGap = t : mixed_cochlear_age_fixation (0.31/0.15)
+|   air = moderate
+|   |   history_roaring = f
+|   |   |   ar_u = absent
+|   |   |   |   mod_s_mixed = f : mixed_cochlear_age_otitis_media (1/0)
+|   |   |   |   mod_s_mixed = t : mixed_cochlear_age_fixation (1/0)
+|   |   |   ar_u = elevated : cochlear_unknown (1/0)
+|   |   |   ar_u = normal : acoustic_neuroma (0/0)
+|   |   history_roaring = t : possible_menieres (1/0)
+|   air = normal
+|   |   mod_sn_gt_3k = f
+|   |   |   speech = good : cochlear_age (3/0)
+|   |   |   speech = normal
+|   |   |   |   mod_sn_gt_4k = f
+|   |   |   |   |   bone = mild
+|   |   |   |   |   |   o_ar_c = absent : acoustic_neuroma (0/0)
+|   |   |   |   |   |   o_ar_c = elevated : normal_ear (1.33/0)
+|   |   |   |   |   |   o_ar_c = normal : normal_ear (1/0.33)
+|   |   |   |   |   bone = moderate : acoustic_neuroma (0/0)
+|   |   |   |   |   bone = normal
+|   |   |   |   |   |   notch_4k = f
+|   |   |   |   |   |   |   o_ar_u = absent : normal_ear (0.67/0)
+|   |   |   |   |   |   |   o_ar_u = elevated : cochlear_poss_noise (1.67/0.67)
+|   |   |   |   |   |   |   o_ar_u = normal : normal_ear (0.67/0)
+|   |   |   |   |   |   notch_4k = t : cochlear_unknown (1.67/0.67)
+|   |   |   |   |   bone = unmeasured : acoustic_neuroma (0/0)
+|   |   |   |   mod_sn_gt_4k = t : cochlear_unknown (1/0)
+|   |   |   speech = poor : acoustic_neuroma (0/0)
+|   |   |   speech = unmeasured : acoustic_neuroma (0/0)
+|   |   |   speech = very_good
+|   |   |   |   o_ar_u = absent : cochlear_poss_noise (1/0)
+|   |   |   |   o_ar_u = elevated : acoustic_neuroma (0/0)
+|   |   |   |   o_ar_u = normal : cochlear_age (1/0)
+|   |   |   speech = very_poor : cochlear_age_and_noise (1/0)
+|   |   mod_sn_gt_3k = t : cochlear_unknown (1/0)
+|   air = profound : cochlear_unknown (0.15/0)
+|   air = severe : cochlear_unknown (0.15/0)
+ar_c = normal
+|   o_ar_u = absent
+|   |   speech = good : acoustic_neuroma (0/0)
+|   |   speech = normal
+|   |   |   age_gt_60 = f : normal_ear (1.02/0.02)
+|   |   |   age_gt_60 = t : mixed_cochlear_age_fixation (1.18/0.59)
+|   |   speech = poor : acoustic_neuroma (0/0)
+|   |   speech = unmeasured : acoustic_neuroma (0/0)
+|   |   speech = very_good : cochlear_age (1.01/0.01)
+|   |   speech = very_poor : mixed_cochlear_age_s_om (1.01/0.01)
+|   o_ar_u = elevated
+|   |   m_sn_gt_2k = f
+|   |   |   m_sn_gt_1k = f
+|   |   |   |   history_dizziness = f
+|   |   |   |   |   age_gt_60 = f
+|   |   |   |   |   |   ar_u = absent : acoustic_neuroma (0/0)
+|   |   |   |   |   |   ar_u = elevated : cochlear_poss_noise (1.03/0.03)
+|   |   |   |   |   |   ar_u = normal
+|   |   |   |   |   |   |   s_sn_gt_2k = f
+|   |   |   |   |   |   |   |   bone = mild : cochlear_poss_noise (1.29/0.29)
+|   |   |   |   |   |   |   |   bone = moderate : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   |   bone = normal
+|   |   |   |   |   |   |   |   |   air = mild : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   |   |   air = moderate : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   |   |   air = normal
+|   |   |   |   |   |   |   |   |   |   speech = good : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   |   |   |   speech = normal : normal_ear (1.75/0)
+|   |   |   |   |   |   |   |   |   |   speech = poor : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   |   |   |   speech = unmeasured : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   |   |   |   speech = very_good : cochlear_unknown (2/0)
+|   |   |   |   |   |   |   |   |   |   speech = very_poor : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   |   |   air = profound : cochlear_unknown (0.06/0)
+|   |   |   |   |   |   |   |   |   air = severe : cochlear_unknown (0.06/0)
+|   |   |   |   |   |   |   |   bone = unmeasured : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   s_sn_gt_2k = t : cochlear_noise_and_heredity (1/0)
+|   |   |   |   |   age_gt_60 = t
+|   |   |   |   |   |   s_sn_gt_2k = f
+|   |   |   |   |   |   |   o_ar_c = absent : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   o_ar_c = elevated : cochlear_age_and_noise (1/0)
+|   |   |   |   |   |   |   o_ar_c = normal : cochlear_age (7/0)
+|   |   |   |   |   |   s_sn_gt_2k = t : cochlear_age (1/0)
+|   |   |   |   history_dizziness = t
+|   |   |   |   |   age_gt_60 = f : normal_ear (1/0)
+|   |   |   |   |   age_gt_60 = t : cochlear_age (1/0)
+|   |   |   m_sn_gt_1k = t : cochlear_poss_noise (1/0)
+|   |   m_sn_gt_2k = t
+|   |   |   history_noise = f : cochlear_age (1/0)
+|   |   |   history_noise = t : cochlear_poss_noise (1/0)
+|   o_ar_u = normal
+|   |   history_noise = f
+|   |   |   history_roaring = f
+|   |   |   |   notch_4k = f
+|   |   |   |   |   speech = good
+|   |   |   |   |   |   air = mild
+|   |   |   |   |   |   |   m_m_sn = f
+|   |   |   |   |   |   |   |   m_m_sn_gt_2k = f
+|   |   |   |   |   |   |   |   |   mod_sn_gt_1k = f
+|   |   |   |   |   |   |   |   |   |   age_gt_60 = f : cochlear_unknown (3/0)
+|   |   |   |   |   |   |   |   |   |   age_gt_60 = t : cochlear_age (6/0)
+|   |   |   |   |   |   |   |   |   mod_sn_gt_1k = t : cochlear_unknown (1/0)
+|   |   |   |   |   |   |   |   m_m_sn_gt_2k = t : cochlear_age (2/0)
+|   |   |   |   |   |   |   m_m_sn = t : cochlear_age (3/0)
+|   |   |   |   |   |   air = moderate : acoustic_neuroma (0/0)
+|   |   |   |   |   |   air = normal : cochlear_age (1/0)
+|   |   |   |   |   |   air = profound : cochlear_unknown (0.12/0)
+|   |   |   |   |   |   air = severe : cochlear_unknown (0.12/0)
+|   |   |   |   |   speech = normal
+|   |   |   |   |   |   static_normal = f
+|   |   |   |   |   |   |   history_dizziness = f : possible_brainstem_disorder (2/0)
+|   |   |   |   |   |   |   history_dizziness = t
+|   |   |   |   |   |   |   |   history_vomiting = f : possible_menieres (2/0)
+|   |   |   |   |   |   |   |   history_vomiting = t
+|   |   |   |   |   |   |   |   |   m_sn_lt_1k = f : cochlear_unknown (1/0)
+|   |   |   |   |   |   |   |   |   m_sn_lt_1k = t : possible_menieres (1/0)
+|   |   |   |   |   |   static_normal = t
+|   |   |   |   |   |   |   m_sn_gt_2k = f
+|   |   |   |   |   |   |   |   air = mild
+|   |   |   |   |   |   |   |   |   m_m_sn_gt_2k = f
+|   |   |   |   |   |   |   |   |   |   m_sn_lt_2k = f
+|   |   |   |   |   |   |   |   |   |   |   m_sn_lt_3k = f
+|   |   |   |   |   |   |   |   |   |   |   |   boneAbnormal = f : cochlear_age (4/0)
+|   |   |   |   |   |   |   |   |   |   |   |   boneAbnormal = t : cochlear_unknown (2/0)
+|   |   |   |   |   |   |   |   |   |   |   m_sn_lt_3k = t : cochlear_unknown (1/0)
+|   |   |   |   |   |   |   |   |   |   m_sn_lt_2k = t : cochlear_unknown (1/0)
+|   |   |   |   |   |   |   |   |   m_m_sn_gt_2k = t : cochlear_age (1/0)
+|   |   |   |   |   |   |   |   air = moderate : cochlear_unknown (1/0)
+|   |   |   |   |   |   |   |   air = normal
+|   |   |   |   |   |   |   |   |   m_sn_2_3k = f
+|   |   |   |   |   |   |   |   |   |   m_sn_gt_4k = f : normal_ear (3/0)
+|   |   |   |   |   |   |   |   |   |   m_sn_gt_4k = t : cochlear_age (3/0)
+|   |   |   |   |   |   |   |   |   m_sn_2_3k = t : cochlear_unknown (1/0)
+|   |   |   |   |   |   |   |   air = profound : cochlear_unknown (0.19/0)
+|   |   |   |   |   |   |   |   air = severe : cochlear_unknown (0.19/0)
+|   |   |   |   |   |   |   m_sn_gt_2k = t : cochlear_age (2/0)
+|   |   |   |   |   speech = poor
+|   |   |   |   |   |   age_gt_60 = f : cochlear_unknown (1.06/0)
+|   |   |   |   |   |   age_gt_60 = t : cochlear_age (3/0)
+|   |   |   |   |   speech = unmeasured : cochlear_age (1.02/0.02)
+|   |   |   |   |   speech = very_good
+|   |   |   |   |   |   m_sn_gt_4k = f
+|   |   |   |   |   |   |   m_sn_gt_1k = f
+|   |   |   |   |   |   |   |   age_gt_60 = f
+|   |   |   |   |   |   |   |   |   air = mild : cochlear_unknown (1/0)
+|   |   |   |   |   |   |   |   |   air = moderate : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   |   |   air = normal
+|   |   |   |   |   |   |   |   |   |   boneAbnormal = f : normal_ear (1/0)
+|   |   |   |   |   |   |   |   |   |   boneAbnormal = t : cochlear_unknown (1/0)
+|   |   |   |   |   |   |   |   |   air = profound : cochlear_unknown (0.09/0)
+|   |   |   |   |   |   |   |   |   air = severe : cochlear_unknown (0.09/0)
+|   |   |   |   |   |   |   |   age_gt_60 = t
+|   |   |   |   |   |   |   |   |   o_ar_c = absent : mixed_cochlear_age_otitis_media (1/0)
+|   |   |   |   |   |   |   |   |   o_ar_c = elevated : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   |   |   o_ar_c = normal : cochlear_age (6/0)
+|   |   |   |   |   |   |   m_sn_gt_1k = t : cochlear_age (1/0)
+|   |   |   |   |   |   m_sn_gt_4k = t : cochlear_age (1/0)
+|   |   |   |   |   speech = very_poor
+|   |   |   |   |   |   s_sn_gt_2k = f
+|   |   |   |   |   |   |   history_dizziness = f : cochlear_unknown (1.06/0)
+|   |   |   |   |   |   |   history_dizziness = t
+|   |   |   |   |   |   |   |   air = mild : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   |   air = moderate : possible_menieres (1/0)
+|   |   |   |   |   |   |   |   air = normal : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   |   air = profound : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   |   air = severe : cochlear_age_plus_poss_menieres (1/0)
+|   |   |   |   |   |   s_sn_gt_2k = t : cochlear_age (1/0)
+|   |   |   |   notch_4k = t : cochlear_unknown (6/0)
+|   |   |   history_roaring = t
+|   |   |   |   m_sn_gt_4k = f
+|   |   |   |   |   static_normal = f : possible_brainstem_disorder (2/0)
+|   |   |   |   |   static_normal = t : cochlear_unknown (1/0)
+|   |   |   |   m_sn_gt_4k = t : cochlear_unknown (1/0)
+|   |   history_noise = t
+|   |   |   notch_at_4k = f
+|   |   |   |   history_heredity = f
+|   |   |   |   |   m_s_sn_gt_4k = f
+|   |   |   |   |   |   air = mild
+|   |   |   |   |   |   |   m_m_sn_gt_1k = f
+|   |   |   |   |   |   |   |   speech = good : cochlear_age_and_noise (1.2/0)
+|   |   |   |   |   |   |   |   speech = normal
+|   |   |   |   |   |   |   |   |   history_dizziness = f
+|   |   |   |   |   |   |   |   |   |   s_sn_gt_4k = f
+|   |   |   |   |   |   |   |   |   |   |   age_gt_60 = f : cochlear_poss_noise (1/0)
+|   |   |   |   |   |   |   |   |   |   |   age_gt_60 = t : cochlear_age_and_noise (2.2/0)
+|   |   |   |   |   |   |   |   |   |   s_sn_gt_4k = t : cochlear_poss_noise (2/0)
+|   |   |   |   |   |   |   |   |   history_dizziness = t : cochlear_unknown (2/0)
+|   |   |   |   |   |   |   |   speech = poor : cochlear_age_and_noise (1.2/0)
+|   |   |   |   |   |   |   |   speech = unmeasured : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   |   speech = very_good : cochlear_age (1.2/0.2)
+|   |   |   |   |   |   |   |   speech = very_poor : cochlear_age_and_noise (1.2/0)
+|   |   |   |   |   |   |   m_m_sn_gt_1k = t : cochlear_age_and_noise (4/0)
+|   |   |   |   |   |   air = moderate : acoustic_neuroma (0/0)
+|   |   |   |   |   |   air = normal
+|   |   |   |   |   |   |   ar_u = absent : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   ar_u = elevated : cochlear_poss_noise (1/0)
+|   |   |   |   |   |   |   ar_u = normal
+|   |   |   |   |   |   |   |   notch_4k = f
+|   |   |   |   |   |   |   |   |   bone = mild : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   |   |   bone = moderate : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   |   |   bone = normal : normal_ear (1/0)
+|   |   |   |   |   |   |   |   |   bone = unmeasured
+|   |   |   |   |   |   |   |   |   |   speech = good : cochlear_age_and_noise (1/0)
+|   |   |   |   |   |   |   |   |   |   speech = normal : cochlear_unknown (3/0)
+|   |   |   |   |   |   |   |   |   |   speech = poor : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   |   |   |   speech = unmeasured : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   |   |   |   speech = very_good : cochlear_poss_noise (1/0)
+|   |   |   |   |   |   |   |   |   |   speech = very_poor : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   |   notch_4k = t
+|   |   |   |   |   |   |   |   |   m_sn_gt_1k = f : cochlear_poss_noise (1/0)
+|   |   |   |   |   |   |   |   |   m_sn_gt_1k = t : cochlear_age_and_noise (1/0)
+|   |   |   |   |   |   air = profound : acoustic_neuroma (0/0)
+|   |   |   |   |   |   air = severe : acoustic_neuroma (0/0)
+|   |   |   |   |   m_s_sn_gt_4k = t : cochlear_age (1/0)
+|   |   |   |   history_heredity = t : cochlear_noise_and_heredity (1/0)
+|   |   |   notch_at_4k = t
+|   |   |   |   bone = mild : cochlear_poss_noise (2.67/0)
+|   |   |   |   bone = moderate : acoustic_neuroma (0/0)
+|   |   |   |   bone = normal : acoustic_neuroma (0/0)
+|   |   |   |   bone = unmeasured
+|   |   |   |   |   ar_u = absent : acoustic_neuroma (0/0)
+|   |   |   |   |   ar_u = elevated : cochlear_poss_noise (0.67/0)
+|   |   |   |   |   ar_u = normal
+|   |   |   |   |   |   m_sn_gt_4k = f
+|   |   |   |   |   |   |   air = mild : cochlear_age_and_noise (1/0)
+|   |   |   |   |   |   |   air = moderate : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   air = normal : cochlear_poss_noise (2.67/0)
+|   |   |   |   |   |   |   air = profound : acoustic_neuroma (0/0)
+|   |   |   |   |   |   |   air = severe : acoustic_neuroma (0/0)
+|   |   |   |   |   |   m_sn_gt_4k = t : cochlear_poss_noise (1/0)
+
+Size of the tree : 365
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         148               65.4867 %
+Incorrectly Classified Instances        78               34.5133 %
+Kappa statistic                          0.5927
+Mean absolute error                      0.0305
+Root mean squared error                  0.1602
+Relative absolute error                 41.983  %
+Root relative squared error             84.5501 %
+Total Number of Instances              226     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.000    0.000    ?          0.000    ?          ?        0.496     0.004     acoustic_neuroma
+                 0.000    0.000    ?          0.000    ?          ?        0.496     0.004     bells_palsy
+                 0.860    0.095    0.754      0.860    0.803      0.734    0.901     0.801     cochlear_age
+                 0.682    0.044    0.625      0.682    0.652      0.614    0.828     0.448     cochlear_age_and_noise
+                 0.000    0.004    0.000      0.000    0.000      -0.004   0.469     0.004     cochlear_age_plus_poss_menieres
+                 0.000    0.013    0.000      0.000    0.000      -0.011   0.489     0.009     cochlear_noise_and_heredity
+                 0.650    0.044    0.591      0.650    0.619      0.581    0.806     0.526     cochlear_poss_noise
+                 0.708    0.096    0.667      0.708    0.687      0.600    0.866     0.650     cochlear_unknown
+                 1.000    0.004    0.667      1.000    0.800      0.815    1.000     1.000     conductive_discontinuity
+                 1.000    0.005    0.857      1.000    0.923      0.924    1.000     1.000     conductive_fixation
+                 0.000    0.004    0.000      0.000    0.000      -0.006   0.738     0.104     mixed_cochlear_age_fixation
+                 0.000    0.014    0.000      0.000    0.000      -0.016   0.484     0.018     mixed_cochlear_age_otitis_media
+                 0.000    0.000    ?          0.000    ?          ?        0.500     0.009     mixed_cochlear_age_s_om
+                 0.000    0.000    ?          0.000    ?          ?        0.500     0.009     mixed_cochlear_unk_discontinuity
+                 0.889    0.014    0.727      0.889    0.800      0.795    0.941     0.795     mixed_cochlear_unk_fixation
+                 0.333    0.000    1.000      0.333    0.500      0.575    0.661     0.342     mixed_cochlear_unk_ser_om
+                 0.000    0.004    0.000      0.000    0.000      -0.004   0.498     0.004     mixed_poss_central_om
+                 0.500    0.000    1.000      0.500    0.667      0.706    0.749     0.504     mixed_poss_noise_om
+                 0.591    0.034    0.650      0.591    0.619      0.581    0.849     0.576     normal_ear
+                 0.000    0.009    0.000      0.000    0.000      -0.013   0.480     0.018     otitis_media
+                 0.000    0.000    ?          0.000    ?          ?        0.500     0.004     poss_central
+                 1.000    0.009    0.667      1.000    0.800      0.813    0.995     0.667     possible_brainstem_disorder
+                 0.250    0.005    0.667      0.250    0.364      0.396    0.670     0.243     possible_menieres
+                 0.000    0.004    0.000      0.000    0.000      -0.006   0.478     0.009     retrocochlear_unknown
+Weighted Avg.    0.655    0.057    ?          0.655    ?          ?        0.827     0.585     
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x   <-- classified as
+  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 |  a = acoustic_neuroma
+  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 |  b = bells_palsy
+  0  0 49  5  0  0  1  0  0  0  0  0  0  0  0  0  0  0  1  0  0  1  0  0 |  c = cochlear_age
+  0  0  2 15  0  1  2  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0 |  d = cochlear_age_and_noise
+  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 |  e = cochlear_age_plus_poss_menieres
+  0  0  1  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 |  f = cochlear_noise_and_heredity
+  0  0  2  1  0  1 13  2  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0 |  g = cochlear_poss_noise
+  0  0  6  0  0  0  3 34  0  0  0  0  0  0  0  0  0  0  3  0  0  1  0  1 |  h = cochlear_unknown
+  0  0  0  0  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 |  i = conductive_discontinuity
+  0  0  0  0  0  0  0  0  0  6  0  0  0  0  0  0  0  0  0  0  0  0  0  0 |  j = conductive_fixation
+  0  0  0  0  0  0  0  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  0  0 |  k = mixed_cochlear_age_fixation
+  0  0  1  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  1  1  0  0  0  0 |  l = mixed_cochlear_age_otitis_media
+  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0 |  m = mixed_cochlear_age_s_om
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  1  0  0  0  0  0 |  n = mixed_cochlear_unk_discontinuity
+  0  0  0  1  0  0  0  0  0  0  0  0  0  0  8  0  0  0  0  0  0  0  0  0 |  o = mixed_cochlear_unk_fixation
+  0  0  0  0  0  0  0  1  0  0  0  0  0  0  1  1  0  0  0  0  0  0  0  0 |  p = mixed_cochlear_unk_ser_om
+  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 |  q = mixed_poss_central_om
+  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0 |  r = mixed_poss_noise_om
+  0  0  1  0  0  1  0  7  0  0  0  0  0  0  0  0  0  0 13  0  0  0  0  0 |  s = normal_ear
+  0  0  0  0  0  0  0  1  0  1  0  0  0  0  1  0  1  0  0  0  0  0  0  0 |  t = otitis_media
+  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0 |  u = poss_central
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  4  0  0 |  v = possible_brainstem_disorder
+  0  0  0  1  1  0  0  3  1  0  0  0  0  0  0  0  0  0  0  0  0  0  2  0 |  w = possible_menieres
+  0  0  1  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 |  x = retrocochlear_unknown
+
